@@ -38,7 +38,7 @@ app.get('/demo',(req,res)=>{
 })
 
 app.get('/fetch',(req,res)=>{
-    res.json(...report);
+    res.status(200).json(report);
 })
 
 app.listen(port,()=>{
