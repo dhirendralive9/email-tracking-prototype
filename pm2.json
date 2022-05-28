@@ -1,7 +1,7 @@
 {
     "script": "index.js",
     "watch": true,
-    "ignore_watch": ["public","[\\/\\\\]\\./", "node_modules"],
+    "ignore_watch": ["public","[\\/\\\\]\\./", "node_modules",".git"],
     "watch_options": {
         "followSymlinks": false
     },
