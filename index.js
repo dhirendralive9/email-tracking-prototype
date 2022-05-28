@@ -18,6 +18,10 @@ app.set('view engine','ejs');
 app.set('trust proxy', true)
 
 app.get('/',(req,res)=>{
+    res.send("Open Email Tracking");
+})
+
+app.get('/image',(req,res)=>{
     res.send("This is working")
     user = platform.parse(req.headers['user-agent']);
     

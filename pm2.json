@@ -1,0 +1,9 @@
+{
+    "script": "index.js",
+    "watch": true,
+    "ignore_watch": ["public","[\\/\\\\]\\./", "node_modules"],
+    "watch_options": {
+        "followSymlinks": false
+    },
+    "name": "mail-tracker"
+}
