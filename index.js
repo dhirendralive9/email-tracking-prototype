@@ -24,10 +24,11 @@ app.get('/',(req,res)=>{
 app.get('/image',(req,res)=>{
     res.send("This is working")
     user = platform.parse(req.headers['user-agent']);
-    
+    console.log(req.query)
+
     var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress 
     
-    var newData = {"user":`${req.headers['user-agent']}`,"ip":ip,"description":user.description,"browser":user.name,"os":user.os.family,"version":user.os.version,"date":`${date.format(new Date(), 'YYYY/MM/DD')}`,"time":`${date.format(new Date(), 'HH:mm:ss')}`};
+    var newData = {"user":`${req.headers['user-agent']}`,"campaign":`${(req.query.campaign)?req.query.campaign:"null"}`,"id":`${(req.query.id)?req.query.id:"null"}`,"email":`${(req.query.email)?req.query.email:"null"}`,"ip":ip,"description":user.description,"browser":user.name,"os":user.os.family,"version":user.os.version,"date":`${date.format(new Date(), 'YYYY/MM/DD')}`,"time":`${date.format(new Date(), 'HH:mm:ss')}`};
     report.push(newData);
     fs.writeFile(`./public/track.json`,JSON.stringify(report),(err)=> console.log(err));
    
